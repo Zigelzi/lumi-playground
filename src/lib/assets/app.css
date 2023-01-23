@@ -65,6 +65,12 @@
 
 p {
 	margin-bottom: 1rem;
+	line-height: 1.75;
+}
+
+a {
+	color: var(--primary-100);
+	text-underline-offset: 5px;
 }
 
 .container {
