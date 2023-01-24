@@ -63,8 +63,19 @@
 	padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 0.5em;
+	line-height: 1.2;
+}
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 1em;
 	line-height: 1.75;
 }
 
@@ -79,4 +90,50 @@ a {
 
 	width: min(var(--max-width), 100% - var(--vertical-padding));
 	margin-inline: auto;
+}
+
+/* Utilities */
+.mt-s {
+	margin-top: var(--mg-s);
+}
+
+.mt-m {
+	margin-top: var(--mg-m);
+}
+
+.mt-l {
+	margin-top: var(--mg-l);
+}
+
+.mt-l {
+	margin-top: var(--mg-l);
+}
+
+.mb-s {
+	margin-bottom: var(--mg-s);
+}
+
+.mb-m {
+	margin-bottom: var(--mg-m);
+}
+
+.mb-l {
+	margin-bottom: var(--mg-l);
+}
+
+.mb-l {
+	margin-bottom: var(--mg-l);
+}
+
+/* Font utilities */
+.heading-m {
+	font-size: var(--fs-heading-m);
+}
+
+.heading-l {
+	font-size: var(--fs-heading-l);
+}
+
+.heading-xl {
+	font-size: var(--fs-heading-xl);
 }

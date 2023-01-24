@@ -35,4 +35,8 @@
 		display: flex;
 		align-items: center;
 	}
+
+	section:last-child {
+		margin-bottom: var(--mg-xxl);
+	}
 </style>
