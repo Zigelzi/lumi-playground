@@ -1,6 +1,8 @@
 <script>
 	import '$lib/assets/reset.css';
 	import '$lib/assets/app.css';
+
+	import Header from '../lib/components/Header.svelte';
 </script>
 
 <head>
@@ -12,6 +14,8 @@
 	/>
 	<title>MS - Digital Playground</title>
 </head>
+
+<Header />
 <main>
 	<slot />
 </main>

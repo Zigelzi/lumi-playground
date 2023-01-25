@@ -3,7 +3,6 @@
 <style>
 	button {
 		background-color: var(--primary-300);
-		color: var(--white);
 		border: none;
 		padding: 0.5em 1em;
 		cursor: pointer;
@@ -12,6 +11,6 @@
 
 	button:hover,
 	button:focus {
-		background-color: var(--primary-500);
+		background-color: var(--primary-600);
 	}
 </style>

@@ -1,7 +1,3 @@
-<script>
-	import Components from '$lib/components/Components.svelte';
-</script>
-
 <section>
 	<div id="landing-page" class="container h-center">
 		<div>
@@ -15,11 +11,6 @@
 			</p>
 			<p>Scroll down to find out more!</p>
 		</div>
-	</div>
-</section>
-<section>
-	<div class="container">
-		<Components />
 	</div>
 </section>
 

@@ -1,10 +1,16 @@
 :root {
 	/* Colors */
-	--primary-100: #fe6c90;
-	--primary-300: #d03791;
-	--primary-500: #87286a;
-	--primary-700: #452459;
-	--primary-900: #260d34;
+	--primary-100: #f0ead2;
+	--primary-200: #e7e8c4;
+	--primary-300: #dde5b6;
+	--primary-400: #adc178;
+	--primary-500: #93a75c;
+	--primary-600: #768649;
+	--primary-700: #596536;
+	--primary-900: #1e2310;
+
+	--secondary-300: #a98467;
+	--secondary-500: #6c584c;
 
 	--white: #fff;
 
@@ -39,8 +45,8 @@
 	font-size: 16px;
 	font-weight: 400;
 
-	background-color: var(--primary-900);
-	color: var(--white);
+	background-color: var(--primary-100);
+	color: var(--primary-900);
 
 	color-scheme: light dark;
 	font-synthesis: none;
@@ -80,7 +86,7 @@ p {
 }
 
 a {
-	color: var(--primary-100);
+	color: var(--primary-700);
 	text-underline-offset: 5px;
 }
 
