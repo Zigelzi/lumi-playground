@@ -1,6 +1,6 @@
 <header>
 	<nav>
-		<ul class="primary-nav">
+		<ul class="primary-nav nav-list">
 			<li><a href="/">Home</a></li>
 			<li><a href="/flex">Flexbox</a></li>
 			<li><a href="/components">Components</a></li>
@@ -17,12 +17,13 @@
 		display: flex;
 		justify-content: center;
 		padding: var(--p-s);
-		gap: var(--p-s);
+		gap: var(--mg-l);
+		min-height: var(--nav-height);
 	}
 
 	li {
-		list-style: none;
-		padding: var(--p-s);
+		display: flex;
+		align-items: center;
 	}
 
 	a {

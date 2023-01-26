@@ -40,6 +40,10 @@
 	--mg-l: 35px;
 	--mg-xxl: 100px;
 
+	/* Element sizes */
+
+	--nav-height: 4rem;
+
 	/* Global styles */
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
@@ -98,7 +102,27 @@ a {
 	margin-inline: auto;
 }
 
+.nav-list {
+	list-style: none;
+}
+
 /* Utilities */
+.m-s {
+	margin: var(--mg-s);
+}
+
+.m-m {
+	margin: var(--mg-m);
+}
+
+.m-l {
+	margin: var(--mg-l);
+}
+
+.m-xl {
+	margin: var(--mg-xl);
+}
+
 .mt-s {
 	margin-top: var(--mg-s);
 }
@@ -111,8 +135,8 @@ a {
 	margin-top: var(--mg-l);
 }
 
-.mt-l {
-	margin-top: var(--mg-l);
+.mt-xl {
+	margin-top: var(--mg-xl);
 }
 
 .mb-s {
@@ -142,4 +166,8 @@ a {
 
 .heading-xl {
 	font-size: var(--fs-heading-xl);
+}
+
+.fw-bold {
+	font-weight: 600;
 }
