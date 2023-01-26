@@ -11,7 +11,7 @@
 <section>
 	<div class="container">
 		<div>
-			<h2 class="heading-l">Components</h2>
+			<h2 class="heading-m">Components</h2>
 			<p>Testing different kind of typical components used in web design.</p>
 		</div>
 		<div>

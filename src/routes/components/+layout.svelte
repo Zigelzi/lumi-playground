@@ -1,5 +1,5 @@
 <div class="components-container">
-	<aside class="side-nav-container">
+	<aside class="side-nav-container visually-hidden">
 		<h3 class="fw-bold">Projects</h3>
 		<nav>
 			<ul class="nav-list">
@@ -8,29 +8,28 @@
 			</ul>
 		</nav>
 	</aside>
-	<section class="m-l components">
+	<section class="mv-m components container">
 		<slot />
 	</section>
 </div>
 
 <style>
-	.components-container {
-		display: flex;
-		min-height: calc(100vh - var(--nav-height));
-	}
-	.side-nav-container {
-		/* position: fixed; */
-		top: var(--nav-height);
-		bottom: 0;
-		background-color: var(--primary-200);
-		padding: var(--p-m) var(--p-l) var(--p-m) var(--p-m);
-	}
+	@media (min-width: 400px) {
+		.components-container {
+			display: flex;
+			min-height: calc(100vh - var(--nav-height));
+		}
+		.side-nav-container {
+			top: var(--nav-height);
+			bottom: 0;
+			background-color: var(--primary-200);
+			padding: var(--p-m) var(--p-l) var(--p-m) var(--p-m);
+			flex-shrink: 0;
+		}
 
-	.components {
-		align-self: center;
-		flex-grow: 1;
-		display: flex;
-		justify-content: center;
+		.components {
+			flex-grow: 1;
+		}
 	}
 
 	li {
