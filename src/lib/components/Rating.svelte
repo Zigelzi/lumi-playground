@@ -1,6 +1,11 @@
 <script>
+	import RatingSelect from './RatingSelect.svelte';
 	let rating = 1;
 	let isCompleted = false;
+
+	function submitFeedback() {
+		isCompleted = true;
+	}
 </script>
 
 <div>
@@ -14,88 +19,21 @@
 					/></svg
 				>
 			</span>
-			<form action="">
+			<form action="" on:submit={submitFeedback}>
 				<fieldset>
-					<legend class="feedback-form-title">How did we do?</legend>
+					<legend class="feedback-form-title mv-l">How did we do?</legend>
 					<p>
 						Please let us know how we did with your support request. All feedback is appreciated to
 						help us improve our offering!
 					</p>
-					<ol class="rating">
-						<li>
-							<label class="radio-label" for="rating_1">
-								<input
-									class="radio-input"
-									bind:group={rating}
-									value="1"
-									type="radio"
-									name="rating"
-									id="rating_1"
-								/>
-								<span class="radio-value-text">1</span>
-							</label>
-						</li>
-						<li>
-							<label class="radio-label" for="rating_2">
-								<input
-									class="radio-input"
-									bind:group={rating}
-									value="2"
-									type="radio"
-									name="rating"
-									id="rating_2"
-								/>
-								<span class="radio-value-text">2</span>
-							</label>
-						</li>
-						<li>
-							<label class="radio-label" for="rating_3">
-								<input
-									class="radio-input"
-									bind:group={rating}
-									value="3"
-									type="radio"
-									name="rating"
-									id="rating_3"
-								/>
-								<span class="radio-value-text">3</span>
-							</label>
-						</li>
-						<li>
-							<label class="radio-label" for="rating_4">
-								<input
-									class="radio-input"
-									bind:group={rating}
-									value="4"
-									type="radio"
-									name="rating"
-									id="rating_4"
-								/>
-								<span class="radio-value-text">4</span>
-							</label>
-						</li>
-						<li>
-							<label class="radio-label" for="rating_5">
-								<input
-									class="radio-input"
-									bind:group={rating}
-									value="5"
-									type="radio"
-									name="rating"
-									id="rating_5"
-								/>
-								<span class="radio-value-text">5</span>
-							</label>
-						</li>
-					</ol>
+					<RatingSelect numberOfRatings={5} bind:rating />
 				</fieldset>
-				<button>Submit</button>
-				<p>You selected {rating}</p>
+				<button class="btn-submit">Submit</button>
 			</form>
 		</div>
 	{:else}
 		<div class="feedback-form">
-			<p>You selected 1 out of 5</p>
+			<p>You selected {rating} out of 5</p>
 			<p class="feedback-form-title">Thank you!</p>
 			<p>
 				We appreciate you taking the time to give a rating. If you ever need more support, don’t
@@ -113,82 +51,51 @@
 		--blue-700: hsl(213, 19%, 18%);
 		--blue-900: hsl(216, 12%, 8%);
 	}
-	.feedback-form {
-		background-color: var(--blue-700);
-		color: var(--gray-200);
-		padding: var(--p-m);
-	}
 
-	.rating {
-		list-style: none;
-		display: flex;
-		justify-content: space-around;
-		margin: var(--mg-l) 0;
-	}
-
-	.radio-label {
+	.bg-circle-gray {
 		position: relative;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		width: 50px;
+		justify-content: center;
 		height: 50px;
-		cursor: pointer;
-	}
-
-	.radio-label:hover > .radio-value-text::after {
-		background-color: var(--orange);
-	}
-
-	.radio-input {
-		/* Visually hide radio button but keep it accessible for screen readers */
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		opacity: 0;
-	}
-
-	.radio-input:checked + .radio-value-text,
-	.radio-label:hover > .radio-value-text {
-		color: var(--white);
-	}
-
-	.radio-input:checked + .radio-value-text::after,
-	.radio-label:hover > .radio-value-text::after {
-		opacity: 0.8;
-	}
-
-	.radio-value-text {
-		color: var(--gray-200);
-		z-index: 1;
-	}
-
-	.radio-value-text::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		width: 50px;
+		background-color: hsla(217, 12%, 63%, 0.2);
 		border-radius: 50%;
-		background-color: var(--gray-200);
-		z-index: -1;
-		opacity: 0.4;
 	}
 
-	.radio-value-text,
-	.radio-value-text::after {
-		transition: background-color 0.2s, color 0.1s, opacity 0.2s;
+	.feedback-form {
+		background: linear-gradient(0deg, var(--blue-900) 10%, var(--blue-700));
+		color: var(--gray-200);
+		padding: var(--p-m);
+		border-radius: 20px;
+		max-width: 400px;
 	}
 
 	.feedback-form-title {
 		color: var(--white);
 		font-size: var(--fs-600);
+		font-weight: 700;
 	}
 
 	fieldset {
 		border: none;
+	}
+
+	.btn-submit {
+		background-color: var(--orange);
+		color: var(--white);
+		font-weight: 700;
+		border: none;
+		padding: 1em 0;
+		width: 100%;
+		border-radius: 50px;
+		cursor: pointer;
+		transition: background-color 0.2s, color 0.1s;
+	}
+
+	.btn-submit:hover,
+	.btn-submit:focus {
+		background-color: var(--white);
+		color: var(--orange);
 	}
 </style>
