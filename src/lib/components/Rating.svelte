@@ -8,7 +8,7 @@
 	}
 </script>
 
-<div>
+<div class="mt-l">
 	{#if !isCompleted}
 		<div class="feedback-form">
 			<span class="bg-circle-gray">

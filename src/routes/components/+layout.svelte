@@ -8,7 +8,7 @@
 			</ul>
 		</nav>
 	</aside>
-	<section class="mv-m components container">
+	<section class="mt-m mb-xxl components container">
 		<slot />
 	</section>
 </div>
@@ -28,7 +28,8 @@
 		}
 
 		.components {
-			flex-grow: 1;
+			display: flex;
+			justify-content: center;
 		}
 	}
 

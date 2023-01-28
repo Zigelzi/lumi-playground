@@ -190,6 +190,10 @@ a {
 	margin-bottom: var(--mg-l);
 }
 
+.mb-xxl {
+	margin-bottom: var(--mg-xxl);
+}
+
 /* Font utilities */
 .heading-m {
 	font-size: var(--fs-heading-m);

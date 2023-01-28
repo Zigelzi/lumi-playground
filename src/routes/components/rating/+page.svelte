@@ -3,6 +3,7 @@
 </script>
 
 <section>
-	<h3 class="heading-m">Interactive rating component</h3>
+	<h3 class="heading-m mb-m">Interactive rating component</h3>
+	<p>Component for giving feedback about the experience.</p>
 	<Rating />
 </section>
