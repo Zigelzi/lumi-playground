@@ -30,7 +30,7 @@
 
 	--p-xs: 5px;
 	--p-s: 10px;
-	--p-m: 20px;
+	--p-m: 15px;
 	--p-l: 35px;
 	--p-xxl: 100px;
 
@@ -194,6 +194,58 @@ a {
 	margin-bottom: var(--mg-xxl);
 }
 
+.p-s {
+	padding: var(--p-s);
+}
+
+.p-m {
+	padding: var(--p-m);
+}
+
+.p-l {
+	padding: var(--p-l);
+}
+
+.pv-xs {
+	padding-top: var(--p-xs);
+	padding-bottom: var(--p-xs);
+}
+
+.pv-s {
+	padding-top: var(--p-s);
+	padding-bottom: var(--p-s);
+}
+
+.pv-m {
+	padding-top: var(--p-m);
+	padding-bottom: var(--p-m);
+}
+
+.pv-l {
+	padding-top: var(--p-l);
+	padding-bottom: var(--p-l);
+}
+
+.ph-s {
+	padding-left: var(--p-xs);
+	padding-right: var(--p-xs);
+}
+
+.ph-s {
+	padding-left: var(--p-s);
+	padding-right: var(--p-s);
+}
+
+.ph-m {
+	padding-left: var(--p-m);
+	padding-right: var(--p-m);
+}
+
+.ph-l {
+	padding-left: var(--p-l);
+	padding-right: var(--p-l);
+}
+
 /* Font utilities */
 .heading-m {
 	font-size: var(--fs-heading-m);
@@ -209,4 +261,8 @@ a {
 
 .fw-bold {
 	font-weight: 600;
+}
+
+.text-center {
+	text-align: center;
 }
