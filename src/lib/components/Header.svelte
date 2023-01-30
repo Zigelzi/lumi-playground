@@ -12,6 +12,7 @@
 			<li class:nav-active={path === '/components'}>
 				<a href="/components">Components</a>
 			</li>
+			<li class:nav-active={path === '/components'}><a href="/arjy">Ärjy</a></li>
 		</ul>
 	</nav>
 </header>
@@ -23,6 +24,7 @@
 
 	.primary-nav {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		padding: var(--p-s);
 		gap: var(--mg-l);
