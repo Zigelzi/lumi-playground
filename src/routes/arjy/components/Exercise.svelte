@@ -1,4 +1,5 @@
 <script>
+	import ExerciseControl from './ExerciseControl.svelte';
 	export let exercise;
 
 	function nameToLowercase(name) {
@@ -11,46 +12,22 @@
 <div class="exercise">
 	<h4 class="text-center fw-bold">{exercise.name}</h4>
 	<div>
-		<label for="{exercise.name}-sets" class="text-center exercise-label mv-m">Sets</label>
-		<div class="exercise-controls">
-			<button class="btn-mini">-</button>
-			<input
-				type="number"
-				name="{exercise.name}-sets"
-				id="{exercise.name}-sets"
-				class="exercise-input"
-				value={exercise.sets}
-			/>
-			<button class="btn-mini">+</button>
-		</div>
+		<label for="{nameToLowercase(exercise.name)}-sets" class="text-center exercise-label mv-m"
+			>Sets</label
+		>
+		<ExerciseControl exerciseName={exercise.name} exerciseValue={exercise.sets} />
 	</div>
 	<div>
-		<label for="{exercise.name}-reps" class="text-center exercise-label mv-m">Reps</label>
-		<div class="exercise-controls">
-			<button class="btn-mini">-</button>
-			<input
-				type="number"
-				name="{exercise.name}-weight"
-				id="{exercise.name}-weight"
-				class="exercise-input"
-				value={exercise.reps}
-			/>
-			<button class="btn-mini">+</button>
-		</div>
+		<label for="{nameToLowercase(exercise.name)}-reps" class="text-center exercise-label mv-m"
+			>Reps</label
+		>
+		<ExerciseControl exerciseName={exercise.name} exerciseValue={exercise.reps} />
 	</div>
 	<div>
-		<label for="{exercise.name}_weight" class="text-center exercise-label mv-m">Weight</label>
-		<div class="exercise-controls">
-			<button class="btn-mini">-</button>
-			<input
-				type="number"
-				name="{exercise.name}_weight"
-				id="{exercise.name}_weight"
-				class="exercise-input"
-				value={exercise.weight}
-			/>
-			<button class="btn-mini">+</button>
-		</div>
+		<label for="{nameToLowercase(exercise.name)}-weight" class="text-center exercise-label mv-m"
+			>Weight</label
+		>
+		<ExerciseControl exerciseName={exercise.name} exerciseValue={exercise.weight} />
 	</div>
 </div>
 
@@ -64,26 +41,5 @@
 
 	.exercise-label {
 		display: block;
-	}
-
-	.exercise-controls {
-		display: flex;
-		gap: 10px;
-	}
-
-	.exercise-input {
-		flex-shrink: 1;
-		min-width: 100px;
-		background-color: var(--primary-200);
-		border: none;
-		color: var(--primary-900);
-		text-align: center;
-		font-size: var(--fs-600);
-	}
-
-	.btn-mini {
-		padding: var(--p-m);
-		background-color: var(--primary-600);
-		border: none;
 	}
 </style>

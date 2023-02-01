@@ -45,7 +45,7 @@
 </script>
 
 <div>
-	<form action="">
+	<form method="post">
 		<h3>Create workout</h3>
 		<p>Select exercises</p>
 		<fieldset class="card-exercise">
