@@ -4,47 +4,41 @@
 		chest: [
 			{
 				name: 'Bench press',
-				defaultValues: {
-					sets: 3,
-					reps: 8
-				}
+				sets: 4,
+				reps: 10,
+				weight: 60
 			},
 			{
 				name: 'Incline bench press',
-				defaultValues: {
-					sets: 3,
-					reps: 8
-				}
+				sets: 4,
+				reps: 10,
+				weight: 60
 			},
 			{
 				name: 'Dumbell bench press',
-				defaultValues: {
-					sets: 3,
-					reps: 8
-				}
+				sets: 4,
+				reps: 10,
+				weight: 60
 			}
 		],
 		back: [
 			{
 				name: 'Deadlift',
-				defaultValues: {
-					sets: 3,
-					reps: 8
-				}
+				sets: 4,
+				reps: 10,
+				weight: 60
 			},
 			{
 				name: 'Lat pulldown',
-				defaultValues: {
-					sets: 3,
-					reps: 8
-				}
+				sets: 4,
+				reps: 10,
+				weight: 60
 			},
 			{
 				name: 'Low row',
-				defaultValues: {
-					sets: 3,
-					reps: 8
-				}
+				sets: 4,
+				reps: 10,
+				weight: 60
 			}
 		]
 	};
