@@ -18,8 +18,8 @@
 </header>
 
 <style>
-	header {
-		background-color: var(--secondary-300);
+	nav {
+		background-color: var(--primary-200);
 	}
 
 	.primary-nav {
@@ -29,7 +29,7 @@
 		padding: var(--p-s);
 		gap: var(--mg-l);
 		min-height: var(--nav-height);
-		box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+		box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
 	}
 
 	li {
@@ -55,7 +55,7 @@
 
 	a {
 		font-size: var(--fs-600);
-		color: var(--white);
+		color: var(--primary-900);
 		text-decoration: none;
 		transition: color, 0.2s;
 	}

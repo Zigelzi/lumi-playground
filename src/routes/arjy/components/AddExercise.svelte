@@ -49,13 +49,13 @@
 		<h3>Create workout</h3>
 		<p>Select exercises</p>
 		<fieldset class="card-exercise">
-			<legend>Chest</legend>
+			<legend class="heading-m">Chest</legend>
 			{#each exercises.chest as exercise, id}
 				<Exercise {exercise} />
 			{/each}
 		</fieldset>
 		<fieldset class="card-exercise">
-			<legend>Back</legend>
+			<legend class="heading-m">Back</legend>
 			{#each exercises.back as exercise, id}
 				<Exercise {exercise} />
 			{/each}
@@ -67,14 +67,14 @@
 	.card-exercise {
 		position: relative;
 		border: 0;
-		background: var(--primary-200);
-		padding: var(--p-l) var(--p-l) var(--p-l) var(--p-l);
+
+		padding: calc(var(--fs-heading-m) + 2rem) 0;
 		margin-bottom: var(--mg-m);
 	}
 
 	.card-exercise legend {
 		position: absolute;
-		top: 10px;
+		top: 0;
 		left: 10px;
 	}
 </style>

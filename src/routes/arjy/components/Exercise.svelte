@@ -34,7 +34,7 @@
 <style>
 	.exercise {
 		padding: var(--p-m) var(--p-l);
-		background-color: var(--primary-300);
+		background-color: var(--primary-200);
 		margin-bottom: var(--mg-s);
 		max-width: 300px;
 	}
