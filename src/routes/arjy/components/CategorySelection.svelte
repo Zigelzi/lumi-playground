@@ -15,6 +15,6 @@
 
 <div>
 	{#each categories as category}
-		<CategoryItem {category} />
+		<CategoryItem {category} on:onCategorySelected />
 	{/each}
 </div>
