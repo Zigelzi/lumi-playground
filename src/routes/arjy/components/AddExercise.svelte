@@ -1,80 +1,17 @@
 <script>
-	import Exercise from './Exercise.svelte';
-	let exercises = {
-		chest: [
-			{
-				name: 'Bench press',
-				sets: 4,
-				reps: 10,
-				weight: 60
-			},
-			{
-				name: 'Incline bench press',
-				sets: 4,
-				reps: 10,
-				weight: 60
-			},
-			{
-				name: 'Dumbell bench press',
-				sets: 4,
-				reps: 10,
-				weight: 60
-			}
-		],
-		back: [
-			{
-				name: 'Deadlift',
-				sets: 4,
-				reps: 10,
-				weight: 60
-			},
-			{
-				name: 'Lat pulldown',
-				sets: 4,
-				reps: 10,
-				weight: 60
-			},
-			{
-				name: 'Low row',
-				sets: 4,
-				reps: 10,
-				weight: 60
-			}
-		]
-	};
+	import CategoryItem from './CategoryItem.svelte';
+	let categories = [
+		{
+			name: 'Chest'
+		},
+		{
+			name: 'Back'
+		}
+	];
 </script>
 
 <div>
-	<form method="post">
-		<h3>Create workout</h3>
-		<p>Select exercises</p>
-		<fieldset class="card-exercise">
-			<legend class="heading-m">Chest</legend>
-			{#each exercises.chest as exercise, id}
-				<Exercise {exercise} />
-			{/each}
-		</fieldset>
-		<fieldset class="card-exercise">
-			<legend class="heading-m">Back</legend>
-			{#each exercises.back as exercise, id}
-				<Exercise {exercise} />
-			{/each}
-		</fieldset>
-	</form>
+	{#each categories as category}
+		<CategoryItem {category} />
+	{/each}
 </div>
-
-<style>
-	.card-exercise {
-		position: relative;
-		border: 0;
-
-		padding: calc(var(--fs-heading-m) + 2rem) 0;
-		margin-bottom: var(--mg-m);
-	}
-
-	.card-exercise legend {
-		position: absolute;
-		top: 0;
-		left: 10px;
-	}
-</style>
