@@ -8,11 +8,10 @@
 	<nav>
 		<ul class="primary-nav nav-list">
 			<li class:nav-active={path === '/'}><a href="/">Home</a></li>
-			<li class:nav-active={path === '/flex'}><a href="/flex">Flexbox</a></li>
 			<li class:nav-active={path === '/components'}>
 				<a href="/components">Components</a>
 			</li>
-			<li class:nav-active={path === '/components'}><a href="/arjy">Ärjy</a></li>
+			<li class:nav-active={path === '/arjy'}><a href="/arjy">Ärjy</a></li>
 		</ul>
 	</nav>
 </header>
@@ -20,6 +19,7 @@
 <style>
 	nav {
 		background-color: var(--primary-200);
+		border-bottom: 1px solid var(--primary-500);
 	}
 
 	.primary-nav {
@@ -41,12 +41,12 @@
 	li::after {
 		content: '';
 		height: 3px;
-		background-color: var(--primary-400);
+		background-color: var(--primary-500);
 		position: absolute;
-		bottom: 0;
+		bottom: -5px;
 		left: 0;
 		width: 0%;
-		transition: width 0.5s;
+		transition: width 0.25s;
 	}
 
 	li:hover::after {
@@ -61,6 +61,6 @@
 	}
 
 	.nav-active a {
-		color: var(--primary-400);
+		color: var(--primary-500);
 	}
 </style>
