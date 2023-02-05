@@ -1,6 +1,12 @@
 /* ----------
 Mock data
 ------------ */
+let workouts = [
+	{
+		name: 'Test'
+	}
+];
+
 const categories = [
 	{
 		id: 1,
@@ -90,6 +96,15 @@ const exercises = [
 		weight: 20
 	}
 ];
+
+export function fetchWorkouts() {
+	return workouts;
+}
+
+export function addWorkout(workout) {
+	workouts.push(workout);
+	return workouts;
+}
 
 export function fetchCategories() {
 	return categories;
