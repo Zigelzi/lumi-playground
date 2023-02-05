@@ -118,6 +118,26 @@ a {
 	}
 }
 
+.card-primary {
+	border: var(--gray-100) 1px solid;
+	border-radius: 5px;
+	box-shadow: 0px 2px 5px 0 hsla(0, 0%, 10%, 0.05);
+	cursor: pointer;
+	background-color: var(--primary-100);
+	color: var(--primary-900);
+	display: block;
+	width: 100%;
+	text-align: left;
+	text-decoration: none;
+}
+
+.btn-primary {
+	background-color: var(--primary-500);
+	border: none;
+	border-radius: 5px;
+	color: var(--primary-100);
+	text-decoration: none;
+}
 /* Utilities */
 .m-s {
 	margin: var(--mg-s);
@@ -138,17 +158,17 @@ a {
 
 .mv-m {
 	margin-top: var(--mg-m);
-	margin-bottom: var(--mg-s);
+	margin-bottom: var(--mg-m);
 }
 
 .mv-l {
 	margin-top: var(--mg-l);
-	margin-bottom: var(--mg-s);
+	margin-bottom: var(--mg-l);
 }
 
 .mv-xl {
 	margin-top: var(--mg-xl);
-	margin-bottom: var(--mg-s);
+	margin-bottom: var(--mg-xl);
 }
 
 .m-xl {

@@ -1,11 +1,7 @@
 /* ----------
 Mock data
 ------------ */
-let workouts = [
-	{
-		name: 'Test'
-	}
-];
+let workouts = [];
 
 const categories = [
 	{
@@ -112,4 +108,12 @@ export function fetchCategories() {
 
 export function fetchExercises() {
 	return exercises;
+}
+
+export function fetchExercisesForCategory(categoryId) {
+	let exercisesOfCategory = exercises.filter(
+		(exercise) => exercise.category_id === parseInt(categoryId)
+	);
+	console.log(exercisesOfCategory);
+	return exercisesOfCategory;
 }

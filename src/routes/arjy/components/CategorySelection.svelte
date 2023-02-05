@@ -1,6 +1,6 @@
 <script>
 	import { onDestroy } from 'svelte';
-	import CategoryItem from './CategoryItem.svelte';
+	import { page } from '$app/stores';
 	import { CategoryStore } from '../stores/CategoryStore';
 
 	let categories = [];
@@ -14,7 +14,8 @@
 </script>
 
 <div>
+	<h2 class="mb-m heading-m">Select category</h2>
 	{#each categories as category}
-		<CategoryItem {category} on:onCategorySelected />
+		<a class="p-m card-primary mb-m" href="{$page.route.id}/{category.id}">{category.name}</a>
 	{/each}
 </div>

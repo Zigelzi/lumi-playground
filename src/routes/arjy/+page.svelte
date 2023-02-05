@@ -1,17 +1,12 @@
 <script>
 	import { onDestroy } from 'svelte';
 	import { WorkoutStore } from './stores/WorkoutStore';
+	import { page } from '$app/stores';
 
 	let workouts = [];
 	const workoutStoreUnsub = WorkoutStore.subscribe((data) => {
 		workouts = data;
 	});
-
-	function addWorkout() {
-		WorkoutStore.addWorkoutToStore({
-			name: 'Test2'
-		});
-	}
 
 	onDestroy(() => {
 		workoutStoreUnsub();
@@ -20,11 +15,31 @@
 
 <section>
 	<div class="container mv-l">
-		<h2 class="heading-m text-center">Ärjy</h2>
-		<p class="text-center">Create gym program that leads to results</p>
-		<button on:click={addWorkout}>Add workout</button>
-		{#each workouts as wo}
-			{wo.name}
-		{/each}
+		<div class="mb-l">
+			<h2 class="heading-l ">Ärjy</h2>
+			<p>Create gym program that leads to results</p>
+		</div>
+		<div>
+			<h2 class="heading-m">Workouts</h2>
+			{#if workouts.length > 0}
+				<a class="btn-primary pv-s ph-m fw-bold mv-l" href="{$page.route.id}/category/"
+					>Create workout</a
+				>
+				{#each workouts as workout}
+					<div class="card-primary p-s mb-s">
+						{workout.name}
+					</div>
+				{/each}
+			{:else}
+				<p>No existing workouts, create one!</p>
+
+				<a class="btn-primary pv-s ph-m fw-bold mv-l" href="{$page.route.id}/category/"
+					>Create workout</a
+				>
+			{/if}
+		</div>
 	</div>
 </section>
+
+<style>
+</style>
