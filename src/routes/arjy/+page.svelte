@@ -22,7 +22,7 @@
 		<div>
 			<h2 class="heading-m">Workouts</h2>
 			{#if workouts.length > 0}
-				<a class="btn-primary pv-s ph-m fw-bold mv-l" href="{$page.route.id}/category/"
+				<a class="btn-primary pv-s ph-m fw-bold mv-l" href="{$page.route.id}/workout/"
 					>Create workout</a
 				>
 				{#each workouts as workout}
@@ -31,9 +31,9 @@
 					</div>
 				{/each}
 			{:else}
-				<p>No existing workouts, create one!</p>
+				<p class="mb-l">No existing workouts, create one!</p>
 
-				<a class="btn-primary pv-s ph-m fw-bold mv-l" href="{$page.route.id}/category/"
+				<a class="btn-primary pv-s ph-m fw-bold mv-l" href="{$page.route.id}/workout/"
 					>Create workout</a
 				>
 			{/if}
