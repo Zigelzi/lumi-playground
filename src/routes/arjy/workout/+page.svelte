@@ -1,39 +1,42 @@
 <script>
 	import { onDestroy } from 'svelte';
-	import CategorySelection from '../components/CategorySelection.svelte';
-
+	import { ExerciseStore } from '../stores/ExerciseStore';
+	import Exercise from '../components/Exercise.svelte';
 	let workout = [];
-	let currentStep = 1;
-	let formSteps = ['category', 'exercise', 'values'];
-	let selectedCategory;
+	let exercises = [];
+	let selectedExercise;
 
-	$: activeStep = formSteps[currentStep - 1];
-
-	function moveToNextStep() {
-		if (currentStep < formSteps.length) {
-			currentStep++;
-		}
-	}
+	const exerciseUnsub = ExerciseStore.subscribe((data) => {
+		exercises = data;
+	});
 
 	function postWorkout() {}
+
+	onDestroy(() => {
+		exerciseUnsub();
+	});
 </script>
 
 <div class="">
 	<form action="post" on:submit|preventDefault={postWorkout} class="mb-l">
-		{#if activeStep === 'category'}
-			<CategorySelection on:change={moveToNextStep} bind:selectedCategory />
-		{:else if activeStep === 'exercise'}
-			<div>
-				<p>Exercises for category: {selectedCategory}</p>
-			</div>
-		{/if}
+		<fieldset class="mb-l exercise-select">
+			<legend class="fw-bold mb-s">Select exercise</legend>
+			<ul>
+				{#each exercises as exercise}
+					<Exercise {exercise} bind:selectedExercise />
+				{/each}
+			</ul>
+		</fieldset>
+		<button class="btn-primary ph-s pv-xs">Add exercise</button>
 	</form>
-	<div>
-		<button
-			class="btn-primary ph-s pv-xs"
-			on:click={() => {
-				currentStep = 1;
-			}}>Reset</button
-		>
-	</div>
 </div>
+
+<style>
+	.exercise-select {
+		border: none;
+	}
+
+	.exercise-select ul {
+		list-style: none;
+	}
+</style>
