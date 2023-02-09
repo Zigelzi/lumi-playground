@@ -4,13 +4,15 @@
 	import Exercise from '../components/Exercise.svelte';
 	let workout = [];
 	let exercises = [];
-	let selectedExercise;
+	let selectedExercise = exercises[0];
 
 	const exerciseUnsub = ExerciseStore.subscribe((data) => {
 		exercises = data;
 	});
 
-	function postWorkout() {}
+	function postWorkout() {
+		workout.push(selectedExercise);
+	}
 
 	onDestroy(() => {
 		exerciseUnsub();
@@ -21,7 +23,7 @@
 	<form action="post" on:submit|preventDefault={postWorkout} class="mb-l">
 		<fieldset class="mb-l exercise-select">
 			<legend class="fw-bold mb-s">Select exercise</legend>
-			<ul>
+			<ul class="exercise-list">
 				{#each exercises as exercise}
 					<Exercise {exercise} bind:selectedExercise />
 				{/each}
@@ -36,7 +38,8 @@
 		border: none;
 	}
 
-	.exercise-select ul {
+	.exercise-list {
 		list-style: none;
+		max-width: 350px;
 	}
 </style>

@@ -26,15 +26,25 @@
 <style>
 	li {
 		display: flex;
+		margin-bottom: var(--mg-s);
+		position: relative;
 	}
 	.exercise {
 		border: 1px solid var(--gray-100);
 		box-shadow: 0 2px 10px 0 hsla(76, 30%, 10%, 0.1);
-		margin-bottom: var(--mg-s);
-		max-width: 300px;
+		flex-grow: 1;
+	}
+
+	.exercise-input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0%;
+		height: 100%;
+		width: 100%;
 	}
 
 	.exercise-input:checked + label {
-		background-color: green;
+		border-color: var(--primary-500);
 	}
 </style>
