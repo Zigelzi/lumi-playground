@@ -33,6 +33,15 @@
 		border: 1px solid var(--gray-100);
 		box-shadow: 0 2px 10px 0 hsla(76, 30%, 10%, 0.1);
 		flex-grow: 1;
+		cursor: pointer;
+	}
+
+	.exercise:hover {
+		border-color: var(--primary-500);
+	}
+
+	.exercise-input:focus + .exercise {
+		border-color: var(--primary-500);
 	}
 
 	.exercise-input {
@@ -42,9 +51,10 @@
 		opacity: 0%;
 		height: 100%;
 		width: 100%;
+		z-index: -1;
 	}
 
-	.exercise-input:checked + label {
+	.exercise-input:checked + .exercise {
 		border-color: var(--primary-500);
 	}
 </style>
