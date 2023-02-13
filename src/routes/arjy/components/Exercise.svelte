@@ -1,5 +1,5 @@
 <script>
-	export let selectedExercise;
+	export let selectedExerciseId;
 	export let exercise;
 
 	function nameToLowercase(name) {
@@ -14,8 +14,8 @@
 		type="radio"
 		name={nameToLowercase(exercise.name)}
 		id={nameToLowercase(exercise.name)}
-		bind:group={selectedExercise}
-		value={exercise.name}
+		bind:group={selectedExerciseId}
+		value={exercise.id}
 		class="exercise-input"
 	/>
 	<label for={nameToLowercase(exercise.name)} class="exercise p-s">
