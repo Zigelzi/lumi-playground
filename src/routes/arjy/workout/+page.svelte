@@ -2,6 +2,7 @@
 	import { onDestroy } from 'svelte';
 	import { ExerciseStore } from '../stores/ExerciseStore';
 	import Exercise from '../components/Exercise.svelte';
+	import ExerciseControl from '../components/ExerciseControl.svelte';
 
 	let workout = [];
 	let exercises = [];
@@ -20,7 +21,9 @@
 	}
 
 	function postWorkout() {
-		workout.push(selectedExerciseId);
+		workout.push(selectedExercise);
+		currentStep = 0;
+		console.log(workout);
 	}
 
 	function nameToLowercase(name) {
@@ -35,7 +38,7 @@
 </script>
 
 <div class="">
-	<form class="mb-l">
+	<form class="mb-l" on:submit|preventDefault>
 		{#if currentStep === 0}
 			<fieldset class="mb-l exercise-select">
 				<legend class="fw-bold mb-s">Select exercise</legend>
@@ -48,35 +51,24 @@
 			<button class="btn-primary ph-s pv-xs" on:click={selectExercise}>Select exercise</button>
 		{:else if currentStep === 1}
 			<div>
-				<h2>Enter values for {selectedExercise.name}</h2>
-				<label for={nameToLowercase(selectedExercise.name)}>
-					Sets
-					<input
-						type="number"
-						name="{nameToLowercase(selectedExercise.name)}-sets"
-						id="{nameToLowercase(selectedExercise.name)}-sets"
-						value={selectedExercise.sets}
-					/>
-				</label>
-				<label for={nameToLowercase(selectedExercise.name)}>
-					Reps
-					<input
-						type="number"
-						name="{nameToLowercase(selectedExercise.name)}-reps"
-						id="{nameToLowercase(selectedExercise.name)}-reps"
-						value={selectedExercise.reps}
-					/>
-				</label>
-				<label for={nameToLowercase(selectedExercise.name)}>
-					Weight
-					<input
-						type="number"
-						name="{nameToLowercase(selectedExercise.name)}-weight"
-						id="{nameToLowercase(selectedExercise.name)}-weight"
-						value={selectedExercise.weight}
-					/>
-				</label>
+				<h2 class="heading-m">Enter values for {selectedExercise.name}</h2>
+				<ExerciseControl
+					type="Sets"
+					exerciseName={nameToLowercase(selectedExercise.name)}
+					exerciseValue={selectedExercise.sets}
+				/>
+				<ExerciseControl
+					type="Reps"
+					exerciseName={nameToLowercase(selectedExercise.name)}
+					exerciseValue={selectedExercise.reps}
+				/>
+				<ExerciseControl
+					type="Weight"
+					exerciseName={nameToLowercase(selectedExercise.name)}
+					exerciseValue={selectedExercise.weight}
+				/>
 			</div>
+			<button class="btn-primary ph-s pv-xs" on:click={postWorkout}>Add to workout</button>
 		{/if}
 	</form>
 </div>
