@@ -28,7 +28,7 @@
 			name="{exerciseName}-{type}"
 			id="{exerciseName}-{type}"
 			class="exercise-input"
-			value={exerciseValue}
+			bind:value={exerciseValue}
 		/>
 		<button class="btn-mini" on:click|preventDefault={increment} aria-label="increment value"
 			>+</button

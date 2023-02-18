@@ -55,17 +55,17 @@
 				<ExerciseControl
 					type="Sets"
 					exerciseName={nameToLowercase(selectedExercise.name)}
-					exerciseValue={selectedExercise.sets}
+					bind:exerciseValue={selectedExercise.sets}
 				/>
 				<ExerciseControl
 					type="Reps"
 					exerciseName={nameToLowercase(selectedExercise.name)}
-					exerciseValue={selectedExercise.reps}
+					bind:exerciseValue={selectedExercise.reps}
 				/>
 				<ExerciseControl
 					type="Weight"
 					exerciseName={nameToLowercase(selectedExercise.name)}
-					exerciseValue={selectedExercise.weight}
+					bind:exerciseValue={selectedExercise.weight}
 				/>
 			</div>
 			<button class="btn-primary ph-s pv-xs" on:click={postWorkout}>Add to workout</button>

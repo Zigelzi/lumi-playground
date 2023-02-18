@@ -12,7 +12,6 @@
 				<a href="/components">Components</a>
 			</li>
 			<li class:nav-active={path === '/arjy'}><a href="/arjy">Ärjy</a></li>
-			<li class:nav-active={path === '/flashlight'}><a href="/flashlight">Flashlight</a></li>
 		</ul>
 	</nav>
 </header>
